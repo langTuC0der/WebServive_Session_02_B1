@@ -24,11 +24,10 @@ public class ProductController {
     }
 
     @GetMapping("/hot-products")
-    public List<Product> getHotProducts() {
+    public List<Product> getHotProducts() { // --> đổi string thành list
         List<Product> products = new ArrayList<>();
         products.add(new Product("HP001", "Áo thun 'Code is Life'", 199.000));
         products.add(new Product("HP002", "Móc khóa 'Bug Free'", 99.000));
-        // Giả sử muốn trả về JSON nhưng lại quên chuyển đổi
-        return products; // <--- Lỗi logic ở đây
+        return products; // <--- sửa để trả về list
     }
 }
