@@ -11,6 +11,7 @@ import java.util.List;
     - Chuỗi trả về dạng string -> sai yêu cầu trả về json
  */
 @RestController
+@RequestMapping("/api/v1/products")
 public class ProductController {
     static class Product {
         private String id; private String name; private double price;
@@ -23,7 +24,7 @@ public class ProductController {
         public void setPrice(double price) { this.price = price; }
     }
 
-    @GetMapping("/hot-products")
+    @GetMapping("/hot")
     public List<Product> getHotProducts() { // --> đổi string thành list
         List<Product> products = new ArrayList<>();
         products.add(new Product("HP001", "Áo thun 'Code is Life'", 199.000));
